@@ -39,11 +39,10 @@ public class Silfides extends Hadas {
     public String toString() {
         return nombre;
     }
+
+   
     
     
     
-    @Override
-    public void atacar() {
-    }
-    
+   
 }

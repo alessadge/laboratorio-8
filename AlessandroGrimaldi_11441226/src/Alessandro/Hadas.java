@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 Edad, Salud, y Poder
  * @author adgri_001
  */
-public abstract class Hadas implements Serializable {
+public class Hadas implements Serializable {
     protected String nombre;
     protected int altura;
     protected int edad;
@@ -82,7 +82,7 @@ public abstract class Hadas implements Serializable {
         return nombre ;
     }
     
-    public abstract void atacar();
+   
         
     }
 

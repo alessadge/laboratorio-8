@@ -35,7 +35,8 @@ public class Salamandras extends Hadas {
         }
     }
 
-    @Override
-    public void atacar() {
+    
     }
+
+   
 }

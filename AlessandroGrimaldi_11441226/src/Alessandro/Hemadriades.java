@@ -17,8 +17,8 @@ public class Hemadriades extends Hadas{
     }
 
     public Hemadriades(float saludArbol, String nombre, int altura, int edad, float salud, float poder) {
-        super(nombre, altura, edad, salud, poder);
-        this.saludArbol = saludArbol;
+        super(nombre, altura, edad, salud+saludArbol, poder);
+
     }
 
     public float getSaludArbol() {
@@ -33,9 +33,7 @@ public class Hemadriades extends Hadas{
     public String toString() {
         return nombre;
     }
+
     
-    @Override
-    public void atacar() {
-    }
     
 }

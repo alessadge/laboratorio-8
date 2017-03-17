@@ -59,9 +59,7 @@ public class Lamias extends Hadas {
         return nombre;
     }
 
-    @Override
-    public void atacar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+  
+
+  
 }
