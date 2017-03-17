@@ -5,7 +5,12 @@
  */
 package Alessandro;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,6 +19,15 @@ import javax.swing.JOptionPane;
  */
 public class Principal extends javax.swing.JFrame {
 
+    
+    public void cargarHadas() throws IOException, FileNotFoundException, ClassNotFoundException{
+        administrarHadas ap = new administrarHadas("./Batallas.cbm");
+        ap.cargarArchivo();
+        hadas = ap.getListaHadas();
+    }
+    public void cargarTodo() throws IOException, FileNotFoundException, ClassNotFoundException{
+        cargarHadas();
+    }
     /**
      * Creates new form Principal
      */
@@ -87,6 +101,7 @@ public class Principal extends javax.swing.JFrame {
         alasSil1 = new javax.swing.JTextField();
         cb_silfides = new javax.swing.JComboBox<>();
         jLabel33 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -99,6 +114,7 @@ public class Principal extends javax.swing.JFrame {
         alasSala1 = new javax.swing.JTextField();
         cb_salamandras = new javax.swing.JComboBox<>();
         jLabel34 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         nombreLamias1 = new javax.swing.JTextField();
@@ -113,6 +129,7 @@ public class Principal extends javax.swing.JFrame {
         branquiasLamias1 = new javax.swing.JTextField();
         cb_lamias = new javax.swing.JComboBox<>();
         jLabel35 = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
@@ -123,7 +140,7 @@ public class Principal extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         cb_hemadriades = new javax.swing.JComboBox<>();
         jLabel36 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        jButton12 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -134,6 +151,12 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         jLabel7.setText("Nombre");
 
@@ -419,6 +442,13 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel33.setText("Hada:");
 
+        jButton9.setText("Eliminar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -439,7 +469,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(alturaSil1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                     .addComponent(edadSil1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                     .addComponent(alasSil1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
-                .addContainerGap(381, Short.MAX_VALUE))
+                .addGap(63, 63, 63)
+                .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(116, 116, 116))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -466,7 +498,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel20)
                     .addComponent(alasSil1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5)
+                    .addComponent(jButton9))
                 .addGap(65, 65, 65))
         );
 
@@ -489,6 +523,13 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel34.setText("Hada:");
 
+        jButton10.setText("Eliminar");
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -509,7 +550,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(alturaSala1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                     .addComponent(edadSala1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                     .addComponent(alasSala1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
-                .addContainerGap(381, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(127, 127, 127))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -536,7 +579,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel24)
                     .addComponent(alasSala1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(jButton6)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6)
+                    .addComponent(jButton10))
                 .addGap(62, 62, 62))
         );
 
@@ -561,6 +606,13 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel35.setText("Hada:");
 
+        jButton11.setText("Eliminar");
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
@@ -583,7 +635,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(edadLamias1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                     .addComponent(aletaLamias1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                     .addComponent(branquiasLamias1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(121, 121, 121))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -614,7 +668,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(branquiasLamias1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29))
                 .addGap(29, 29, 29)
-                .addComponent(jButton7)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton7)
+                    .addComponent(jButton11))
                 .addGap(30, 30, 30))
         );
 
@@ -635,6 +691,13 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel36.setText("Hada:");
 
+        jButton12.setText("Eliminar");
+        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton12MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
@@ -653,7 +716,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(alturaHema1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                     .addComponent(edadHema1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                     .addComponent(jButton8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(365, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(131, 131, 131))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -676,7 +741,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel32)
                     .addComponent(edadHema1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
-                .addComponent(jButton8)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton8)
+                    .addComponent(jButton12))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
 
@@ -700,19 +767,6 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Modificar", jPanel2);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 784, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 427, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Eliminar", jPanel3);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -814,15 +868,25 @@ public class Principal extends javax.swing.JFrame {
         int edad;
         float salud=563;
         float poder=67;
-        
+        Hadas p;
         alas = Integer.parseInt(alasSil.getText());
         nombre = nombreSil.getText();
         altura = Integer.parseInt(alturaSil.getText());
         edad = Integer.parseInt(edadSil.getText());
         
-        hadas.add(new Silfides(alas, nombre, altura, edad, salud , poder));
-        JOptionPane.showMessageDialog(this, "Se agrego exitosamente");
         
+
+        p=new Silfides(alas, nombre, altura, edad, salud , poder);
+        hadas.add(p);
+        JOptionPane.showMessageDialog(this, "Se agrego exitosamente");
+
+        try {
+            ap.cargarArchivo();
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ap.setHada(p);
+        ap.escribirArchivo();
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
@@ -833,14 +897,26 @@ public class Principal extends javax.swing.JFrame {
         int edad;
         float salud=683;
         float poder=71;
+        Hadas p; 
         
         alas = Integer.parseInt(alasSala.getText());
         nombre = nombreSala.getText();
         altura = Integer.parseInt(alturaSala.getText());
         edad = Integer.parseInt(edadSala.getText());
         
-        hadas.add(new Salamandras(alas, nombre, altura, edad, salud , poder));
+
+        p=new Salamandras(alas, nombre, altura, edad, salud , poder);
+        hadas.add(p);
         JOptionPane.showMessageDialog(this, "Se agrego exitosamente");
+
+ 
+        try {
+            ap.cargarArchivo();
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ap.setHada(p);
+        ap.escribirArchivo();
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
@@ -852,15 +928,25 @@ public class Principal extends javax.swing.JFrame {
         int edad;
         float salud=475;
         float poder=57;
-        
+        Hadas p;
         aletas = Integer.parseInt(aletaLamias.getText());
         branquias = Integer.parseInt(branquiasLamias.getText());
         nombre = nombreSala.getText();
         altura = Integer.parseInt(alturaSala.getText());
         edad = Integer.parseInt(edadSala.getText());
         
-        hadas.add(new Lamias(aletas,branquias, nombre, altura, edad, salud , poder));
+
+        p=new Lamias(aletas,branquias, nombre, altura, edad, salud , poder);
+        hadas.add(p);
         JOptionPane.showMessageDialog(this, "Se agrego exitosamente");
+
+        try {
+            ap.cargarArchivo();
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ap.setHada(p);
+        ap.escribirArchivo(); 
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -870,15 +956,24 @@ public class Principal extends javax.swing.JFrame {
         int edad;
         float salud=373;
         float poder=78;
-        
+        Hadas p;
      
         nombre = nombreSala.getText();
         altura = Integer.parseInt(alturaSala.getText());
         edad = Integer.parseInt(edadSala.getText());
         
-        hadas.add(new Hemadriades(173,nombre, altura, edad, salud , poder));
+        
+        p=new Hemadriades(173,nombre, altura, edad, salud , poder);
+        hadas.add(p);
         JOptionPane.showMessageDialog(this, "Se agrego exitosamente");
         
+        try {
+            ap.cargarArchivo();
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ap.setHada(p);
+        ap.escribirArchivo(); 
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
@@ -903,6 +998,14 @@ public class Principal extends javax.swing.JFrame {
         cb_silfides.getItemAt(cb_silfides.getSelectedIndex()).setPoder(poder);
 
         JOptionPane.showMessageDialog(this, "Se modifico exitosamente");
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+            if (t instanceof Silfides) {
+                model.addElement(t);
+            }
+        }
+        cb_silfides.setModel(model);
+        
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
@@ -926,6 +1029,15 @@ public class Principal extends javax.swing.JFrame {
         cb_salamandras.getItemAt(cb_salamandras.getSelectedIndex()).setSalud(salud);
         cb_salamandras.getItemAt(cb_salamandras.getSelectedIndex()).setPoder(poder);
         JOptionPane.showMessageDialog(this, "Se modificar exitosamente");
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        
+        for (Hadas t : hadas) {
+            if (t instanceof Salamandras) {
+                model.addElement(t);
+            }
+        }
+        cb_salamandras.setModel(model);
+       
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
@@ -954,6 +1066,14 @@ public class Principal extends javax.swing.JFrame {
         
 
         JOptionPane.showMessageDialog(this, "Se modifico exitosamente");
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        
+        for (Hadas t : hadas) {
+            if (t instanceof Lamias) {
+                model.addElement(t);
+            }
+        }
+        cb_lamias.setModel(model);
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
@@ -977,7 +1097,105 @@ public class Principal extends javax.swing.JFrame {
         
 
         JOptionPane.showMessageDialog(this, "Se modifico exitosamente");
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+       
+        model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+            if (t instanceof Hemadriades) {
+                model.addElement(t);
+            }
+        }
+        cb_hemadriades.setModel(model);
+        
     }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        // TODO add your handling code here:
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+            if (t instanceof Silfides) {
+                model.addElement(t);
+            }
+        }
+        cb_silfides.setModel(model);
+        model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+            if (t instanceof Salamandras) {
+                model.addElement(t);
+            }
+        }
+        cb_salamandras.setModel(model);
+        model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+            if (t instanceof Hemadriades) {
+                model.addElement(t);
+            }
+        }
+        cb_hemadriades.setModel(model);
+        model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+            if (t instanceof Lamias) {
+                model.addElement(t);
+            }
+        }
+        cb_lamias.setModel(model);
+        
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // TODO add your handling code here:
+        hadas.remove(cb_silfides.getSelectedIndex());
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+            if (t instanceof Silfides) {
+                model.addElement(t);
+            }
+        }
+        cb_silfides.setModel(model);
+        
+    }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        // TODO add your handling code here:
+        hadas.remove(cb_salamandras.getSelectedIndex());
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        
+        for (Hadas t : hadas) {
+            if (t instanceof Salamandras) {
+                model.addElement(t);
+            }
+        }
+        cb_salamandras.setModel(model);
+        
+    }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        // TODO add your handling code here:
+        hadas.remove(cb_lamias.getSelectedIndex());
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        
+        for (Hadas t : hadas) {
+            if (t instanceof Lamias) {
+                model.addElement(t);
+            }
+        }
+        cb_lamias.setModel(model);
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+        // TODO add your handling code here:
+        
+        hadas.remove(cb_hemadriades.getSelectedItem());
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        
+        for (Hadas t : hadas) {
+            if (t instanceof Hemadriades) {
+                model.addElement(t);
+            }
+        }
+        cb_hemadriades.setModel(model);
+        
+    }//GEN-LAST:event_jButton12MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1044,6 +1262,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField edadSil;
     private javax.swing.JTextField edadSil1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1051,6 +1272,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1099,7 +1321,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -1119,7 +1340,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField nombreSil1;
     // End of variables declaration//GEN-END:variables
 ArrayList<Hadas> hadas = new ArrayList();
-
+static administrarHadas ap = new administrarHadas("./Hadas.cbm");
 
 
 }
