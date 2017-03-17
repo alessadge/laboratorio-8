@@ -5,6 +5,7 @@
  */
 package Alessandro;
 
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,13 +13,15 @@ import javax.swing.JOptionPane;
 Edad, Salud, y Poder
  * @author adgri_001
  */
-public abstract class Hadas {
+public abstract class Hadas implements Serializable {
     protected String nombre;
     protected int altura;
     protected int edad;
     protected float salud;
     protected float poder;
-
+    
+    private static final long SerialVersionUID = 777L;
+    
     public Hadas() {
     }
 
